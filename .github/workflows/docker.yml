@@ -24,7 +24,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Docker build
-        run: docker build -t ghcr.io/Rupixel-Network/nanolimbo_docker:1.0 .
+        run: docker build -t ghcr.io/rupixelnetwork/nanolimbo_docker:1.0 .
 
       - name: Docker push
-        run: docker push ghcr.io/Rupixel-Network/nanolimbo_docker:1.0
+        run: docker push ghcr.io/rupixelnetwork/nanolimbo_docker:1.0
