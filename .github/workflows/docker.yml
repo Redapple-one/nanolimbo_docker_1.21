@@ -16,6 +16,13 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Docker build
         run: docker build -t ghcr.io/${{ github.repository_owner }}/nanolimbo_docker:1.0 .
 
